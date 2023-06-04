@@ -1,0 +1,15 @@
+{
+  "name": "anglish-translator",
+  "description": "An English to Anglish (fully Germanic English) translator",
+  "scripts": {},
+  "author": {
+    "name": "Bark Fa",
+    "url": "https://github.com/Bark-fa"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.3"
+  }
+}
