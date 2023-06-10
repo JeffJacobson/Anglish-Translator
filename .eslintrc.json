@@ -1,4 +1,5 @@
 {
+    "root": true,
     "env": {
         "browser": true,
         "es2021": true
@@ -14,6 +15,7 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-dupe-keys": "warn"
+        "no-dupe-keys": "warn",
+        "prefer-const": "error"
     }
 }
