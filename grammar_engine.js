@@ -1,4 +1,11 @@
-function singulariseThenPluralise(word) {
+import {wordbook} from "./wordbook.js"
+
+/**
+ * Converts a word to its singular form, then to its plural form.
+ * @param {string} word 
+ * @returns {string | undefined}
+ */
+export function singulariseThenPluralise(word) {
     if (word.endsWith('ies')) {
         word = word.substring(0, word.length - 3) + 'y';
     } else if (word.endsWith('s')) {
@@ -24,6 +31,11 @@ function singulariseThenPluralise(word) {
     }
 }
 
+/**
+ * 
+ * @param {string} word 
+ * @returns {string | undefined}
+ */
 function pluralise(word) {
     if (word.endsWith('y')) {
         word = word.substring(0, word.length - 1) + 'ies';
@@ -40,8 +52,12 @@ function pluralise(word) {
     }
 }
 
-
-function presentContinuous(word) {
+/**
+ * 
+ * @param {string} word 
+ * @returns {string | undefined}
+ */
+export function presentContinuous(word) {
     if (word.endsWith('ing')) {
         word = word.substring(0, word.length - 3);
     } else {
@@ -56,7 +72,7 @@ function presentContinuous(word) {
         } else {
             
             if (word+"e" in wordbook){
-                wordWithoutE = wordbook[word+"e"].substring(0, wordbook[word+"e"].length - 1)
+                const wordWithoutE = wordbook[word+"e"].substring(0, wordbook[word+"e"].length - 1)
                 word = wordWithoutE + "ing";
             } else {
                 word = ""
@@ -72,6 +88,11 @@ function presentContinuous(word) {
 }
 
 
+/**
+ * 
+ * @param {string} word 
+ * @returns {string | undefined}
+ */
 function toPastTense(word) {
     if (!word.endsWith('ed')) {
         if (word.endsWith('y')) {
@@ -94,8 +115,13 @@ function toPastTense(word) {
     }
 }
 
-function toPresentTenseThenPastTense(word) {
-    originalWord = word;
+/**
+ * 
+ * @param {string} word 
+ * @returns {string | undefined}
+ */
+export function toPresentTenseThenPastTense(word) {
+    const originalWord = word;
 
     if (word.endsWith('ed')) {
         word = word.substring(0, word.length - 2);

@@ -1,9 +1,12 @@
+import wordbook from "./wordbook.js"
+import { singulariseThenPluralise, toPresentTenseThenPastTense, presentContinuous } from "./grammar_engine.js";
+
 function capitaliseFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 
-window.onload = function () {
+// window.onload = function () {
 
     // set up the constants.
     const translateBtn = document.getElementById("translate")
@@ -20,8 +23,8 @@ window.onload = function () {
         // Set up the variables.
         let inputWords = english.value;
         let outputText = ""
-        let keys = [];
-        let specialCharactersIndex = {};
+        const keys = [];
+        const specialCharactersIndex = {};
         let textSize = 0;
         let outputTextSize = 0;
 
@@ -36,7 +39,7 @@ window.onload = function () {
         inputWords.forEach((word, index) => {
 
             if (specialCharacters.test(word)) {
-                let character = word.match(specialCharacters);
+                const character = word.match(specialCharacters);
                 Object.assign(specialCharactersIndex, {
                     [index]: [character]
                 });
@@ -54,8 +57,8 @@ window.onload = function () {
 
         inputWords.forEach((word, index) => {
 
-            let twoWords = inputWords[index] + " " + inputWords[index + 1];
-            let threeWords = inputWords[index] + " " + inputWords[index + 1] + " " + inputWords[index + 2];
+            const twoWords = inputWords[index] + " " + inputWords[index + 1];
+            const threeWords = inputWords[index] + " " + inputWords[index + 1] + " " + inputWords[index + 2];
 
             if (translateToAnglish) {
                 // value by key (English->Anglish)
@@ -171,7 +174,7 @@ window.onload = function () {
 
         // Display the translated text.
         anglish.textContent = capitaliseFirstLetter(outputText);
-        let percentage = Math.round((outputTextSize / textSize) * 100);
+        const percentage = Math.round((outputTextSize / textSize) * 100);
         let color;
         if (percentage >= 51) {
             color = "green";
@@ -209,10 +212,10 @@ window.onload = function () {
         }
     
         
-        let temp = input.value;
+        const temp = input.value;
         input.value = output.textContent;
         output.textContent = temp;
     }
 
-}
+// }
 

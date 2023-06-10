@@ -7,7 +7,7 @@ for handling spaces is disputed and I'm open to a better way, the said code star
 
 */
 
-var wordbook = {
+export const wordbook = {
     "a cappella": "mouthglee",
     "a cappellas": "mouthglees",
     "a-la-carte": "by-the-list",
@@ -7100,3 +7100,5 @@ var wordbook = {
     "zythology": "beerlore",
 
 }
+
+export default wordbook;
